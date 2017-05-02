@@ -16,4 +16,8 @@ git config --global alias.gr 'grep -n'
 git config --global alias.st 'status'
 git config --global alias.subdate 'submodule update --init --recursive'
 
+#
+# Vim
+#
 
+sudo apt-get install -y vim vim-nox-py2
