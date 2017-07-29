@@ -14,6 +14,7 @@ git config --global alias.ci 'commit'
 git config --global alias.co 'checkout'
 git config --global alias.gr 'grep -n'
 git config --global alias.st 'status'
+git config --global alias.sti 'status -uno --ignore-submodules'
 git config --global alias.subdate 'submodule update --init --recursive'
 
 #
