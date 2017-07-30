@@ -4,6 +4,20 @@ set -e
 set -x
 
 #
+# Update package list
+#
+
+sudo apt-get update
+
+#
+# Basic packages
+#
+
+sudo apt-get install -y \
+    wget \
+    python-pip
+
+#
 # Git
 #
 
@@ -27,6 +41,12 @@ sudo apt-get install -y vim vim-nox-py2
 
 [ -d ~/.vim/bundle/Vundle.vim ] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# monokai color scheme
+
+mkdir -p ~/.vim/colors/
+wget -O ~/.vim/colors/monokai.vim https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim
+pip install --user powerline-status
+
 cat <<EOF > ~/.vimrc
 set shiftwidth=4
 set smartindent
@@ -35,8 +55,6 @@ set hlsearch
 set incsearch
 set expandtab
 set number
-set laststatus=2
-set statusline=%f
 set ignorecase
 set smartcase
 set cursorline
@@ -69,4 +87,14 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" monokai section
+colorscheme monokai
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+set laststatus=2
+" monokai section
 EOF
