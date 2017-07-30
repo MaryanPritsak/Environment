@@ -25,7 +25,7 @@ sudo apt-get install -y vim vim-nox-py2
 
 # Install Vundle for vim plugins
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+[ -d ~/.vim/bundle/Vundle.vim ] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 cat <<EOF > ~/.vimrc
 set shiftwidth=4
@@ -69,4 +69,4 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-EOF                 
+EOF
